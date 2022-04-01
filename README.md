@@ -9,4 +9,16 @@ Update_Setting(ชื่อไฟล์) -- Update Setting ใหม่
 getgenv()['MyName'] -- Getชื่อของตัวเอง
 JsonEncode(table) -- แปลงค่าเป็น JSON
 JsonDecode(JSON) -- แปลงจาก JSON เป็น Table
+---- Ex. ----
+getgenv().Setting = {
+    ['Auto Farm'] = false,
+    ['Fly'] = true
+}
+pcall(function()loadstring(game:HttpGet('https://raw.githubusercontent.com/MAZIHUB191/MAZI-API/main/SaveSettingAPI'))() end)
+local JSON = JsonEncode({abc='fff'})
+JsonDecode(JSON)
+Check_Setting(getgenv()['MyName'])
+Get_Setting(getgenv()['MyName'])
+Update_Setting(getgenv()['MyName'])
+
 ```
