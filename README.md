@@ -1,6 +1,6 @@
 # MAZI-API
 # DOCS
-```
+```lua
 ---- Save Setting API ----
 getgenv().Setting = {}
 Check_Setting(ชื่อไฟล์) -- Checkว่า File มีอยู่ไหม
