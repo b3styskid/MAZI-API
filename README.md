@@ -23,3 +23,8 @@ Update_Setting(getgenv()['MyName'])
 
 ```
 ---- Crypt API ----
+```lua
+local MAZICryptAPI = loadstring(game:HttpGet('https://raw.githubusercontent.com/MAZIHUB191/MAZI-API/main/MAZI-Crypt-API'))()
+encrypt(secertkey,data) -- encrypt
+
+```
