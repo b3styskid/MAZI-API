@@ -1,0 +1,47 @@
+local function byte(vl)
+    local output = ''
+    for i=1,#vl do
+        local a = string.sub(vl,i,i)
+        output = output..string.char(string.byte(math.random(97, 122)))..string.byte(a)
+    end
+    return output
+end
+local function encrypt(secret,data)
+    local output = ''
+    local vl = {}
+    local charact = 'abcdefghijklmnopqrstuvwxyz'
+    local number = '1234567890'
+    local characttable = {}
+    local numbertable = {}
+    if data == '' then
+        data = 'nil'
+        -- data = string.char(string.byte(math.random(97, 122)))
+    end
+    if #data < 3 then
+        data = data..'123'
+    end
+    for i=1,#data do
+        local a = string.upper(string.sub(data,i,i))
+        vl[i] = secret..a..string.reverse(secret)
+        vl[i] = string.reverse(vl[i])..secret
+    end
+    for i=1,#vl do
+        output = output..''..vl[i]..byte(vl[i])
+    end
+    if #output > 128 then
+        output = string.sub(output,1,128)
+    end
+    for i=1,#number do
+    local a = string.sub(number,i,i)
+    numbertable[i] = a
+    end
+    
+    for i=1,#charact do
+    local a = string.sub(charact,i,i)
+    characttable[i] = a
+    end
+    for i,v in pairs(characttable) do
+        output = string.gsub(output, i, v)
+    end
+    return output
+end
