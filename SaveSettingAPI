@@ -16,6 +16,7 @@ end
 getgenv()['Get_Setting'] = function(Name)
     if isfolder('SaveSetting') and isfile('SaveSetting/'..Name..'_'..'Setting.json') then
         getgenv().Setting = JsonDecode(readfile('SaveSetting/'..Name..'_'..'Setting.json'))
+        return getgenv().Setting
     else
         Check_Setting(Name)
     end
