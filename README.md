@@ -1,7 +1,7 @@
 # DOCS MAZI-API
 ```lua
 ---- Save Setting API ----
-getgenv().Setting = {}
+getgenv().Setting = {} -- Setting
 Check_Setting(ชื่อไฟล์) -- Checkว่า File มีอยู่ไหม
 Get_Setting(ชื่อไฟล์) -- ดูว่า Setting มีอะไรบ้าง
 Update_Setting(ชื่อไฟล์) -- Update Setting ใหม่
