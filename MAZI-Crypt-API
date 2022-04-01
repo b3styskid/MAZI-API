@@ -6,7 +6,7 @@ local function byte(vl)
     end
     return output
 end
-local function encrypt(secret,data)
+getgenv().encrypt = function(secret,data)
     local output = ''
     local vl = {}
     local charact = 'abcdefghijklmnopqrstuvwxyz'
