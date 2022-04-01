@@ -1,5 +1,4 @@
-# MAZI-API
-# DOCS
+# DOCS MAZI-API
 ```lua
 ---- Save Setting API ----
 getgenv().Setting = {}
