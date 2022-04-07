@@ -28,3 +28,7 @@ local MAZICryptAPI = loadstring(game:HttpGet('https://raw.githubusercontent.com/
 encrypt(secertkey,data) -- encrypt
 
 ```
+---- Fast Attack ----
+```lua
+loadstring(game:HttpGet('https://github.com/MAZIHUB191/MAZI-API/blob/main/Fast_Attack.lua'))()
+```
