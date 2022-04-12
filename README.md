@@ -33,7 +33,7 @@ encrypt(secertkey,data) -- encrypt
 loadstring(game:HttpGet('https://github.com/MAZIHUB191/MAZI-API/blob/main/Fast_Attack.lua'))()
 ```
 ---- Fake Damage ----
-```
+```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Besty191/MAZI-API/main/Fake_Damage.lua'))()
 แค่รัน code ด้านบนเเล้ว รัน FakeDamage()
 หรือรันพร้อมกันเช่น
