@@ -34,7 +34,8 @@ youtube : https://youtu.be/ZL_OEO4SfK4
 ```lua
 loadstring(game:HttpGet('https://github.com/MAZIHUB191/MAZI-API/blob/main/Fast_Attack.lua'))()
 ```
----- Fake Damage ----
+---- Fake Damage ---- 
+youtube : https://youtu.be/O6q0PHYWd6c
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Besty191/MAZI-API/main/Fake_Damage.lua'))()
 แค่รัน code ด้านบนเเล้ว รัน FakeDamage()
