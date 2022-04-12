@@ -1,5 +1,6 @@
 # DOCS MAZI-API
 ---- Save Setting API ----
+youtube : https://youtu.be/ZL_OEO4SfK4
 ```lua
 getgenv().Setting = {} -- Setting
 Check_Setting(ชื่อไฟล์) -- Checkว่า File มีอยู่ไหม
@@ -29,6 +30,7 @@ encrypt(secertkey,data) -- encrypt
 
 ```
 ---- Fast Attack ----
+youtube : https://youtu.be/Z1lQKBfeXfs
 ```lua
 loadstring(game:HttpGet('https://github.com/MAZIHUB191/MAZI-API/blob/main/Fast_Attack.lua'))()
 ```
