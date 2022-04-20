@@ -49,7 +49,7 @@ FakeDamage(100)
 ```
 ---- Silent Aim Blox Fruit ----
 ```lua
-local setting = {
+getgenv().setting = {
     Fov = 50,
     Color = Color3.fromRGB(191, 255, 209),
     LockPlayers = false,
