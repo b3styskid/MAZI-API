@@ -153,7 +153,6 @@ spawn(function()
                                             Playersaimbot = v.Name
                                             PlayersPosition = v.Character.HumanoidRootPart.Position
                                             v.Character.HumanoidRootPart.Size = Vector3.new(100,100,100)
-                                            v.Character.HumanoidRootPart.Transparency = 0.5
                                         end
                                     end
                                 end
