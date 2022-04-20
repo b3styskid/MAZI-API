@@ -47,3 +47,12 @@ FakeDamage จะมี 1 Args คือ Damage
 เช่น
 FakeDamage(100)
 ```
+---- Silent Aim Blox Fruit ----
+local setting = {
+    Fov = 50,
+    Color = Color3.fromRGB(191, 255, 209),
+    LockPlayers = false,
+    LockPlayersBind = Enum.KeyCode.L,
+    resetPlayersBind = Enum.KeyCode.P,
+}
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Besty191/MAZI-API/main/Blox_Fruit_Silent_Aim'))()
