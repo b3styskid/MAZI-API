@@ -133,7 +133,7 @@ end
 spawn(function()
     game.GetService(game, "RunService").RenderStepped:Connect(function()
         pcall(function()
-        updateCircle(setting['Fov'],setting['Color'])
+        updateCircle(getgenv().setting['Fov'],getgenv().setting['Color'])
         end)
     end)
 end)
@@ -145,11 +145,11 @@ spawn(function()
                     if v.Character:FindFirstChild('HumanoidRootPart') then
                         local pos = currentCamera.WorldToViewportPoint(currentCamera, v.Character.HumanoidRootPart.Position)
                         local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
-                        if magnitude < (setting['Fov'] * 6 -8) /2 then
+                        if magnitude < (getgenv().setting['Fov'] * 6 -8) /2 then
                             if magnitude < math.huge then
                                 if (v.Character.HumanoidRootPart.Position-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 1000 then
                                     if v.Name ~= game.Players.LocalPlayer.Name then
-                                        if setting['LockPlayers'] == false then
+                                        if getgenv().setting['LockPlayers'] == false then
                                             Playersaimbot = v.Name
                                             PlayersPosition = v.Character.HumanoidRootPart.Position
                                             v.Character.HumanoidRootPart.Size = Vector3.new(100,100,100)
@@ -184,46 +184,20 @@ spawn(function()
         end
     end)
 end)
--- spawn(function()
---     pcall(function()
---         game.GetService(game, "RunService").RenderStepped:Connect(function()
---             if Playersaimbot ~= nil and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
---                 local args = {
---                     [1] =  game:GetService("Players"):FindFirstChild(Playersaimbot).Character.HumanoidRootPart.Position
---                 }
---                 game:GetService("Players").LocalPlayer.Character[game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
---             end
---         end)
---     end)
--- end)
--- spawn(function()
--- local gg = getrawmetatable(game)
---     local old = gg.__namecall
---     setreadonly(gg,false)
---     gg.__namecall = newcclosure(function(self,...)
---         local method = getnamecallmethod()
---         local args = {...}
---         if tostring(method) == "FireServer" and  self.Name == "RemoteEvent"  and type(args[1]) == 'vector' and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and Playersaimbot ~= nil then
---             print(args[1])
---             args[1] = game:GetService("Players"):FindFirstChild(Playersaimbot).Character.HumanoidRootPart.Position * Vector3.new(0,2,0) -- เอา Position ที่จะตีทำเป็น functionแล้วreturnมา เช่น a().HumanoidRootPart.Position
---             return old(self,...)
---         end
---         return old(self,...)
---     end)
--- end)
+
 game:GetService("UserInputService").InputBegan:Connect(function(io, p)
-    if io.KeyCode == setting['LockPlayersBind'] then
-        if setting['LockPlayers'] then
+    if io.KeyCode == getgenv().setting['LockPlayersBind'] then
+        if getgenv().setting['LockPlayers'] then
             loackplayerslabel.Text = "Lock Players | OFF"
-            setting['LockPlayers'] = false
-            print(setting['LockPlayers'])
+            getgenv().setting['LockPlayers'] = false
+            print(getgenv().setting['LockPlayers'])
         else
             loackplayerslabel.Text = "Lock Players | ON"
-            setting['LockPlayers'] = true
-            print(setting['LockPlayers'])
+            getgenv().setting['LockPlayers'] = true
+            print(getgenv().setting['LockPlayers'])
         end
     end
-    if io.KeyCode == setting['resetPlayersBind'] then
+    if io.KeyCode == getgenv().setting['resetPlayersBind'] then
         Playersaimbot = nil
         PlayersPosition = nil
         ImageProfile.Image = ''
@@ -272,21 +246,3 @@ mouse.Button1Down:Connect(function()
     end
     end)
 end)
--- spawn(function()
---     local gg = getrawmetatable(game)
---     local old = gg.__namecall
---     setreadonly(gg,false)
---     gg.__namecall = newcclosure(function(...)
---         local method = getnamecallmethod()
---         local args = {...}
---         if tostring(method) == "FireServer" then
---             if tostring(args[1]) == "RemoteFunctionShoot" then
---                 if Playersaimbot ~= nil then
---                     print(...)
---                     return old(unpack(args))
---                 end
---             end
---         end
---         return old(...)
---     end)
--- end)
