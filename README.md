@@ -58,5 +58,7 @@ getgenv().setting = {
 }
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Besty191/MAZI-API/main/Blox_Fruit_Silent_Aim'))()
 ```
+```lua
 ---- Attack No Animation ----
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Besty191/MAZI-API/main/Attack%20No%20Animation"))()
+```
